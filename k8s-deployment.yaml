@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spring-boot-mongo
-        image: ganeshtudumu/spring-boot-mongo:latest
+        image: ganeshtudumu/spring-boot-mongo:latest1.0.0
         ports:
         - containerPort: 8080
 ---
@@ -29,4 +29,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-  type: LoadBalancer
+      nodePort: 30080
+  type: NodePort
