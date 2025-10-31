@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: spring-boot-mongo
-        image: ganeshtudumu/spring-boot-mongo:latest1.0.10
+        image: ganeshtudumu/manesha:1.0.0
         ports:
         - containerPort: 8080
 ---
