@@ -4,7 +4,7 @@
   become: yes
   tasks:
     - name: Pull latest Docker image
-      command: docker pull ganeshtudumu/devops:latest
+      command: docker pull ganeshtudumu/spring-boot-mongo:latest1.0.10
 
     - name: Stop old container
       command: docker stop myapp || true
@@ -13,4 +13,4 @@
       command: docker rm myapp || true
 
     - name: Run new container
-      command: docker run -d --name myapp -p 8080:8080 ganeshtudumu/devops:latest
+      command: docker run -d --name myapp -p 8080:8080 ganeshtudumu/spring-boot-mongo:latest1.0.10
