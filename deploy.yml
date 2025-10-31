@@ -1,0 +1,16 @@
+---
+- name: Deploy application using Ansible
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Pull latest Docker image
+      command: docker pull ganeshtudumu/devops:latest
+
+    - name: Stop old container
+      command: docker stop myapp || true
+
+    - name: Remove old container
+      command: docker rm myapp || true
+
+    - name: Run new container
+      command: docker run -d --name myapp -p 8080:8080 ganeshtudumu/devops:latest
